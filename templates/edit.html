@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Badge</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/edit.css') }}">
+  </head>
+  <body>
+    <h1>Edit Badge</h1>
+    <form action="{{ url_for('edit_badge', badge_id=badge[0]) }}" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_method" value="PUT">
+      <label for="badge_name">Badge Name:</label>
+      <input type="text" id="badge_name" name="badge_name" value="{{ badge[1] }}" required>
+      <br>
+      <label for="badge_description">Badge Description:</label>
+      <textarea id="badge_description" name="badge_description" required>{{ badge[2] }}</textarea>
+      <br>
+      <label for="eligible_students">Eligible Students:</label>
+      <input type="text" id="eligible_students" name="eligible_students" value="{{ badge[4] }}" required>
+      <br>
+       <label for="badge_file">Badge File:</label>
+      <input type="file" id="badge_file" name="badge_file" accept="image/png" >
+      <br>
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
