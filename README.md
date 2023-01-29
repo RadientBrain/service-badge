@@ -15,6 +15,7 @@
   │ app.py
   │ .flaskenv
   │ .gitignore
+  │ requirements.txt
   │
   └───static
   │ └───css
