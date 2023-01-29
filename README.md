@@ -2,6 +2,8 @@
 
 - DB Used = `PostgreSQL`
 - Command = `CREATE DATABASE badges`
+- PostgreSQL URI = `postgresql://<username>:<password>@<host>:<port>/<db_name>`
+
 - Table Name = `badges`
 
 ---
@@ -9,6 +11,7 @@
 ## | name | description | badge_file | eligible_students |
 
 - File structure =
+
   ```
   service-badge
   │ README.md
@@ -29,6 +32,6 @@
     └─── list_badges.html
   ```
 
-```
-
-```
+- Using the script:
+  `chmod +x install.sh`
+  `./install.sh`
