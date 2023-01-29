@@ -11,8 +11,6 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 DATABASE_URI = 'postgresql://postgres:chetan@127.0.0.1:5432/badges'
 
 # Function to initialize the database and create the table
-
-
 def init_db():
     conn = psycopg2.connect(DATABASE_URI)
     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
@@ -30,8 +28,6 @@ def init_db():
     conn.close()
 
 # Route to handle the form submission for uploading a badge
-
-
 @app.route('/badge/upload', methods=['GET', 'POST'])
 def upload_badge():
     if request.method == 'POST':
@@ -54,8 +50,6 @@ def upload_badge():
     return render_template('index.html')
 
 # Route to list all the badges
-
-
 @app.route('/badge/list')
 def list_badges():
     conn = psycopg2.connect(DATABASE_URI)
@@ -67,8 +61,6 @@ def list_badges():
     return render_template('list_badges.html', badges=badges)
 
 # Route to handle the API endpoint for verifying a badge
-
-
 @app.route('/badge/verify')
 def verify_badge():
     badge_name = request.args.get('name')
@@ -129,8 +121,6 @@ def edit_badge(badge_id):
     return render_template('edit.html', badge=badge)
 
 # Route to delete a badge
-
-
 @app.route('/badge/delete/<int:badge_id>')
 def delete_badge(badge_id):
     conn = psycopg2.connect(DATABASE_URI)
