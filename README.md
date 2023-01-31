@@ -19,6 +19,7 @@
   │ .flaskenv
   │ .gitignore
   │ requirements.txt
+  │ install.sh
   │
   └───static
   │ └───css
@@ -33,5 +34,4 @@
   ```
 
 - Using the script:
-  `chmod +x install.sh`
-  `./install.sh`
+  `chmod +x install.sh` and then `./install.sh`
